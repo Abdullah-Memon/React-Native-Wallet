@@ -32,7 +32,9 @@ Dependencies:
     + @upstash/redis@1.34.9
     + nodemon (dev Dependencies)
 
-
+2. Frontend: (external)
+    +@clerk/clerk-expo (for authentication)
+    + react-native-keyboard-aware-scroll (for forms covered by keyboard, with this library we avoid such scenarios)
 ========================================================
 Folder Structure:
 ========================================================
@@ -54,9 +56,40 @@ Folder Structure:
     1.5 package-lock.json
 
 2. mobile (frontend)
+    2.1 app (this folder the main folder from all the pages/ components and everything will be render to UI)
+        2.1.1 index.jsx (main gateway of frontend application)
+    2.2 assets (this folder contains all images/logos/media and style files for each screen.)
+        2.2.1 styles (this folder will contains all the style sheets used in our application )
+            2.2.1.1 auth.styles.js (stylesheet for login page)
+            2.2.1.2 create.styles.js (stylesheet for singnin page)
+            2.2.1.3 home.style.js (stylesheet for dashboard page)
+        2.2.2 images (this folder will contain all the images used in this project.)
+    2.3 components (this folder will contains global/shared components)
+        2.3.1 safeScreen.jsx this file is used as a wrapper to prevent content from getting out of screen visible area.
+    2.4 constants (this folder will contains all the static information such as theme, colors etc)
+        2.4.1 colors.js (this file contains all the dynamic color themes used in this applicaiton)
+    2.5 lib (this folder will contain all the)
+        2.5.1 utils.js (this file will contains all the basic/global function used in this entire project such as formatDate)
+
 
 ========================================================
 Important commands for React-Native:
 ========================================================
 1. create expo react native app:
     npx create-expo-app@latest .
+
+
+========================================================
+Important commands for this project only:
+========================================================
+1. setup clerk for authentication.
+    npm install @clerk/clerk-expo
+    1.1 Follow documentation: https://dashboard.clerk.com/apps/app_39mo8NWAoJHBUOvZE39R4KWWokw/instances/ins_39mo8M9qsQSJmdtgZW0paazZ1Lf
+
+
+
+========================================================
+Notes for React-Native:
+========================================================
+1. Create SafeScreen.jsx file as a wrapper of _layout.jsx file so that content should not overflow out of screen and use library which is already installed 'react-native-safe-area-context' to adjust padding for all devices.
+
