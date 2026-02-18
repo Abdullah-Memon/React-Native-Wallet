@@ -70,6 +70,8 @@ Folder Structure:
         2.4.1 colors.js (this file contains all the dynamic color themes used in this applicaiton)
     2.5 lib (this folder will contain all the)
         2.5.1 utils.js (this file will contains all the basic/global function used in this entire project such as formatDate)
+    2.6 hooks (this folder will contain custome hooks)
+        2.6.1 useTransactions.js (this file will be used to manipulate the transaction data from database - backend to frontend)
 
 
 ========================================================
@@ -92,4 +94,10 @@ Important commands for this project only:
 Notes for React-Native:
 ========================================================
 1. Create SafeScreen.jsx file as a wrapper of _layout.jsx file so that content should not overflow out of screen and use library which is already installed 'react-native-safe-area-context' to adjust padding for all devices.
-
+2. We have some special files such as:
+    2.1 _layout.js (for creating the layout)
+    2.2 _index.js (as the main access point)
+3. We have special way to create routes is by wrapping foldername with parentheses () 
+    3.1 (auth) it means it is a authentication route which will contains login and signup page type modules.
+    3.2 (home) / (root) it means this will contain the application routes such as dashboards.
+4. Every route may have there own _layout.js page 
